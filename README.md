@@ -8,12 +8,12 @@ The goal of this project is tackle the problem statement of enhancing EV chargin
 EV Enhance aims to create an API-centric app that allows for a one-stop platform for all the different major EV companies. 
 The MVP aims to onboard all EV Partners and interface them to one platform.
 
-To run the app:
+**To run the iOS app:**
 ```
 Download ios-ev-enhance.xcodeproj and run the app on iPhone 12 emulator.
 ```
 
-To run backend service - Download the backend repo [here](https://github.com/carsontham/ev-enhance).
+**To run backend service - Download the backend repo [here](https://github.com/carsontham/ev-enhance).**
 
 Run the following command to migrate data which spins up a postgresql container:
 ```
