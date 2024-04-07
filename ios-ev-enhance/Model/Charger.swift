@@ -30,5 +30,4 @@ class ChargerCell: UITableViewCell {
         super.layoutSubviews()
 
     }
-
 }

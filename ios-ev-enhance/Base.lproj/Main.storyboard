@@ -72,8 +72,7 @@
                                     <color key="baseBackgroundColor" red="0.54948842855825963" green="0.77595441365979378" blue="0.67432557288678463" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="testButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wcG-vz-Yyl"/>
-                                    <segue destination="MCU-nL-jo8" kind="show" id="tAh-ex-TX8"/>
+                                    <segue destination="MCU-nL-jo8" kind="show" id="aTt-LV-ASA"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hello User!" translatesAutoresizingMaskIntoConstraints="NO" id="ty9-ql-T5P">
@@ -110,7 +109,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chargerTable" destination="whr-Dx-FMG" id="oyx-UK-WcH"/>
-                        <outlet property="testButton" destination="uqL-NM-MhQ" id="92y-6v-PcY"/>
+                        <outlet property="newBtn" destination="uqL-NM-MhQ" id="MsC-Dd-QFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,7 +139,8 @@
                                     <color key="baseBackgroundColor" red="0.54948842860000002" green="0.77595441369999996" blue="0.67432557289999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="testButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QGu-85-lGx"/>
+                                    <action selector="scanningButton:" destination="MCU-nL-jo8" eventType="touchUpInside" id="qjV-Ug-Uge"/>
+                                    <segue destination="G5r-7x-lDs" kind="show" id="gfc-qF-WHy"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qr-A1234X" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-DP-R8w">
@@ -160,31 +160,99 @@
             </objects>
             <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="Vfr-t6-Pzu">
             <objects>
-                <viewController id="G5r-7x-lDs" sceneMemberID="viewController">
+                <viewController id="G5r-7x-lDs" customClass="ConfirmViewController" customModule="ios_ev_enhance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jdp-3Q-agq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="You have selected the following charger. Please confirm to start charging:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4yR-0s-XFr">
+                                <rect key="frame" x="36" y="119" width="341" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Location:  Rate: Company:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R6h-4e-j6R">
+                                <rect key="frame" x="36" y="242" width="138" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Marina Square  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="paX-ht-6Aj">
+                                <rect key="frame" x="182" y="236" width="170" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SP_Group_logo" translatesAutoresizingMaskIntoConstraints="NO" id="oC8-Oy-9Ea">
+                                <rect key="frame" x="36" y="369" width="285" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwY-tL-UjW" userLabel="CONFIRM">
+                                <rect key="frame" x="126" y="558" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85729236230000005" green="1" blue="0.92885554560000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="CONFIRM ">
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="QFT-zn-jWp" kind="unwind" identifier="unwindToHome" unwindAction="unwind:" id="4g6-qv-zOL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="XXX / kWh" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XcA-Kv-cBz">
+                                <rect key="frame" x="182" y="270" width="170" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Company Name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RHG-GP-0SW">
+                                <rect key="frame" x="182" y="302" width="170" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hLp-7I-5ml"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z5y-qL-R7F"/>
+                    <connections>
+                        <outlet property="companyName" destination="RHG-GP-0SW" id="mBc-0p-34j"/>
+                        <outlet property="rate" destination="XcA-Kv-cBz" id="YVg-De-Gg2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FHj-KY-ccO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="QFT-zn-jWp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1960" y="-2"/>
+            <point key="canvasLocation" x="1959.5419847328244" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="SP_Group_logo" width="500" height="164"/>
         <image name="qr-A1234X" width="340" height="318"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

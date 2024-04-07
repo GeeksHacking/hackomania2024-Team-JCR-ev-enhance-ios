@@ -15,7 +15,9 @@
 		C81B5CFC2BC1A1FD006EE961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C81B5CFA2BC1A1FD006EE961 /* LaunchScreen.storyboard */; };
 		C87789382BC1C71F0058B49D /* Charger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87789372BC1C71F0058B49D /* Charger.swift */; };
 		C877893B2BC1C7C30058B49D /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C877893A2BC1C7C30058B49D /* utils.swift */; };
+		C886901E2BC23839006E57B7 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C886901D2BC23839006E57B7 /* ConfirmViewController.swift */; };
 		C88956C32BC1E9680031B5CA /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88956C22BC1E9670031B5CA /* ScanController.swift */; };
+		C88956C52BC20C7E0031B5CA /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88956C42BC20C7E0031B5CA /* view.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +31,9 @@
 		C81B5CFD2BC1A1FD006EE961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C87789372BC1C71F0058B49D /* Charger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charger.swift; sourceTree = "<group>"; };
 		C877893A2BC1C7C30058B49D /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		C886901D2BC23839006E57B7 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		C88956C22BC1E9670031B5CA /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
+		C88956C42BC20C7E0031B5CA /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			children = (
 				C81B5CF32BC1A1FB006EE961 /* HomeController.swift */,
 				C88956C22BC1E9670031B5CA /* ScanController.swift */,
+				C886901D2BC23839006E57B7 /* ConfirmViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C87789372BC1C71F0058B49D /* Charger.swift */,
+				C88956C42BC20C7E0031B5CA /* view.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,7 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C877893B2BC1C7C30058B49D /* utils.swift in Sources */,
+				C88956C52BC20C7E0031B5CA /* view.swift in Sources */,
 				C87789382BC1C71F0058B49D /* Charger.swift in Sources */,
+				C886901E2BC23839006E57B7 /* ConfirmViewController.swift in Sources */,
 				C81B5CF42BC1A1FB006EE961 /* HomeController.swift in Sources */,
 				C81B5CF02BC1A1FB006EE961 /* AppDelegate.swift in Sources */,
 				C88956C32BC1E9680031B5CA /* ScanController.swift in Sources */,

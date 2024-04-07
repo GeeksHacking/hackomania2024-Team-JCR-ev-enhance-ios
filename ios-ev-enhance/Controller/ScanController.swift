@@ -12,9 +12,61 @@ class ScanController: UIViewController {
 
     @IBOutlet weak var image: UIView!
     let session = AVCaptureSession()
-    
+    var evObject: EVResponse!
     override func viewDidLoad() {
         setupCamera()
+        callAPI()
+    }
+    
+    
+    @IBAction func scanningButton(_ sender: Any) {
+        print("sending request...")
+//        callAPI()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(self.evObject)
+        if let vc = (segue.destination as? ConfirmViewController) {
+            vc.obj = self.evObject
+            print(self.evObject!)
+        }
+    }
+    
+    
+    func callAPI(){
+        guard let url = URL(string: "http://localhost:3000/company/ev-information") else{
+            print("exiting")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+
+        request.httpMethod = "POST"
+        
+        let body: [String: AnyHashable] = [
+            "charger_id": "B2728T"
+        ]
+       
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        
+        let task = URLSession.shared.dataTask(with: request){ data, _, error in
+            guard let data = data, error == nil else{
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                self.evObject = try decoder.decode(EVResponse.self, from: data)
+                print("cars", self.evObject)
+//                if let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments){
+//                    self.evObject = try decoder.decode(EVResponse.self, from: JSONSerialization.data(withJSONObject: response))
+//                    print(self.evObject)
+//                }
+                print("object is ", self.evObject!)
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
     }
     
     private enum Constants {
@@ -23,8 +75,7 @@ class ScanController: UIViewController {
       static let alertButtonTitle = "OK"
     }
 
-    // MARK: - set up camera
-
+        
     func setupCamera() {
         guard let device = AVCaptureDevice.default(for: .video) else { return }
         

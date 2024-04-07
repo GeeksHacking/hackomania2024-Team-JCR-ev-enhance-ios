@@ -14,18 +14,16 @@ class HomeController: UIViewController{
     
     override func viewDidLoad() {
         populateTable(arr: &chargerPoints)
-        testButton.layer.cornerRadius = 15
-        testButton.clipsToBounds = true
+        newBtn.layer.cornerRadius = 15
+        newBtn.clipsToBounds = true
         super.viewDidLoad()
         chargerTable.dataSource = self
     }
-        
+    @IBOutlet var newBtn: UIButton!
     
-    @IBOutlet weak var testButton: UIButton!
-    
-    @IBAction func testButton(_ sender: Any) {
-        print("hello ")
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
     }
+
 }
 
 extension HomeController: UITableViewDataSource{
@@ -40,7 +38,6 @@ extension HomeController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.rowHeight = 80
-        print("im here")
         let cell = tableView.dequeueReusableCell(withIdentifier: "chargerCell", for: indexPath) as! ChargerCell
 
 
